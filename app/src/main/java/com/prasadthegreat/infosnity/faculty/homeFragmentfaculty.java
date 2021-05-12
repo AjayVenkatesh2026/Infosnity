@@ -1,5 +1,6 @@
 package com.prasadthegreat.infosnity.faculty;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,11 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.prasadthegreat.infosnity.R;
+import com.prasadthegreat.infosnity.students.homeFragmentStudent;
 
 public class homeFragmentfaculty extends Fragment {
 
+    TextView mCreateClasstxt;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -46,6 +50,15 @@ public class homeFragmentfaculty extends Fragment {
                              Bundle savedInstanceState) {
 
         View view= inflater.inflate(R.layout.fragment_home_faculty, container, false);
+
+        mCreateClasstxt=(TextView)view.findViewById(R.id.createclassroomtxt);
+        mCreateClasstxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getContext(),createclassActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

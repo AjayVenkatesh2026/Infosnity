@@ -5,11 +5,35 @@
     android:layout_height="match_parent"
     tools:context=".faculty.homeFragmentfaculty">
 
+    <EditText
+        android:id="@+id/searchedit"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="    Search class.."
+        android:background="@drawable/search_layout_background" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/createclassroomtxt"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:layout_centerInParent="true"
-        android:text="Home faculty"/>
+        android:text="Create Classroom"
+        android:drawableEnd="@drawable/plus_icon"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/lightblack"
+        android:layout_below="@id/searchedit" />
+        <TextView
+            android:id="@+id/invitation"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/classroomtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite People" />
+
+
 
 </RelativeLayout>

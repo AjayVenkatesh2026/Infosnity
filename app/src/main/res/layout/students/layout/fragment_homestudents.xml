@@ -10,14 +10,16 @@
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="    Search mail.."
+        android:hint="    Search channel.."
         android:background="@drawable/search_layout_background" />
 
     <TextView
         android:id="@+id/channeltxt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
         android:layout_height="wrap_content"
         android:text="Channels"
+        android:drawableEnd="@drawable/group_icon"
         android:textSize="30dp"
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
@@ -34,10 +36,12 @@
 
         <TextView
             android:id="@+id/invitation"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Invite People" />
+            android:drawableEnd="@drawable/plus_icon"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Join Class" />
     </RelativeLayout>
 
 </RelativeLayout>

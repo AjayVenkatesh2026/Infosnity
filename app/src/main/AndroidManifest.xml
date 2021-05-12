@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Infosnity">
-        <activity android:name=".faculty.MainActivityfaculty"></activity>
+        <activity android:name=".faculty.createclassActivity"></activity>
+        <activity android:name=".faculty.MainActivityfaculty" />
         <activity android:name=".roleActivity" />
         <activity android:name=".splashActivity">
             <intent-filter>
