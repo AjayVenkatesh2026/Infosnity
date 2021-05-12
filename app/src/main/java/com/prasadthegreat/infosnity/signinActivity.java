@@ -3,10 +3,17 @@ package com.prasadthegreat.infosnity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -31,6 +38,9 @@ public class signinActivity extends AppCompatActivity {
 
     GoogleSignInClient mSignInClient;
     FirebaseAuth firebaseAuth;
+    ProgressDialog progressBar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +48,12 @@ public class signinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         firebaseAuth=FirebaseAuth.getInstance();
+
+        progressBar = new ProgressDialog(this);
+        progressBar.setTitle("Please Wait...");
+        progressBar.setMessage("We are setting everything for you...");
+        progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
 
 
         GoogleSignInOptions signInOptions=new GoogleSignInOptions
@@ -61,7 +77,6 @@ public class signinActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -73,7 +88,7 @@ public class signinActivity extends AppCompatActivity {
 
             if(googleSignInAccountTask.isSuccessful())
             {
-                Toast.makeText(getApplicationContext(),"Google Sign in Successfull",Toast.LENGTH_SHORT).show();
+                progressBar.show();
                 try
                 {
                     GoogleSignInAccount googleSignInAccount=googleSignInAccountTask.getResult(ApiException.class);
@@ -110,8 +125,11 @@ public class signinActivity extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
-                                                Toast.makeText(getApplicationContext(),"Registration Success",Toast.LENGTH_SHORT).show();
-                                                startActivity(new Intent(getApplicationContext(),roleActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+
+                                                progressBar.cancel();
+                                                Intent intent=new Intent(getApplicationContext(),roleActivity.class);
+                                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
                                             }
                                         }
                                     });
