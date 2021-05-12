@@ -29,7 +29,7 @@ public class MainActivityfaculty extends AppCompatActivity {
         mbottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNavView_faculty);
         mbottomNavigationView.setBackground(null);
         Menu menuNav=mbottomNavigationView.getMenu();
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,new homeFragmentStudent()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_faculty,new homeFragmentfaculty()).commit();
         mbottomNavigationView.setOnNavigationItemSelectedListener(bottomnavMethod);
     }
 

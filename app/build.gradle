@@ -59,4 +59,7 @@ dependencies {
     //progress bar
     implementation'com.jpardogo.googleprogressbar:library:1.2.0'
 
+    //circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }

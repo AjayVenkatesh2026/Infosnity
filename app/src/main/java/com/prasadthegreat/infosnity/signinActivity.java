@@ -51,7 +51,7 @@ public class signinActivity extends AppCompatActivity {
 
         progressBar = new ProgressDialog(this);
         progressBar.setTitle("Please Wait...");
-        progressBar.setMessage("We are setting everything for you...");
+        progressBar.setMessage("We are setting Everything for you...");
         progressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
 
@@ -75,6 +75,7 @@ public class signinActivity extends AppCompatActivity {
         startActivityForResult(intent,100);
 
     }
+
 
 
     @Override
@@ -120,6 +121,7 @@ public class signinActivity extends AppCompatActivity {
                                     user_details.put("profilepic",pic);
                                     user_details.put("status","Hey,i am using Infosnity");
                                     user_details.put("mid",id);
+                                    user_details.put("role","null");
 
                                     myRef.child(id).setValue(user_details).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
