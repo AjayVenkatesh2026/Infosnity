@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_faculty"
+        android:title="Home"
+        android:icon="@drawable/home_icon"
+        />
+
+    <item
+        android:id="@+id/dms_faculty"
+        android:title="Dms"
+        android:icon="@drawable/chat_icon"
+        />
+
+
+    <item
+        android:id="@+id/files_faculty"
+        android:title="Files"
+        android:icon="@drawable/files_icon"
+        />
+
+
+
+    <item
+        android:id="@+id/profile_faculty"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"
+        />
+
+
+</menu>
