@@ -3,15 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/blue"
     android:layout_height="match_parent"
     tools:context=".splashActivity">
 
+   <TextView
+       android:id="@+id/splash_title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/splash_title"
+       android:textSize="50dp"
+       android:layout_centerInParent="true"
+       android:fontFamily="@font/Splash_font"
+       android:textColor="@color/white"
+       />
+
     <TextView
+        android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Splash Screen"
-        android:layout_centerInParent="true"
-        android:textSize="50dp"
-        />
+        android:text="@string/splash_tag"
+        android:layout_below="@+id/splash_title"
+        android:layout_centerHorizontal="true"
+        cont android:textColor="@color/blue"/>
 
 </RelativeLayout>
