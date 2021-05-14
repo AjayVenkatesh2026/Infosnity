@@ -3,5 +3,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="splash_title">InfoSNity</string>
     <string name="splash_tag">Now sharing info is easy</string>
+    <string name="message_box">       Enter your message here...</string>
+
 
 </resources>

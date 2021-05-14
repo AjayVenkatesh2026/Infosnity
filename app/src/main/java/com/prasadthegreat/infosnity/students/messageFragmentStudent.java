@@ -1,6 +1,7 @@
 package com.prasadthegreat.infosnity.students;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 import com.prasadthegreat.infosnity.R;
+import com.prasadthegreat.infosnity.chatActivity;
 
 
 public class messageFragmentStudent extends Fragment {
@@ -147,6 +149,7 @@ public class messageFragmentStudent extends Fragment {
 class studentmessageAdapter extends FirebaseRecyclerAdapter<studentModel,studentmessageAdapter.studentViewholder>
 {
 
+
     public studentmessageAdapter(@NonNull FirebaseRecyclerOptions<studentModel> options) {
         super(options);
     }
@@ -155,11 +158,39 @@ class studentmessageAdapter extends FirebaseRecyclerAdapter<studentModel,student
     protected void onBindViewHolder(@NonNull studentViewholder holder, int position, @NonNull studentModel model)
     {
 
-
+        String data=model.getName().toString();
         holder.mTextview.setText(model.getName().toString());
-
        Glide.with(holder.mImg.getContext()).load(model.getProfilepic()).into(holder.mImg);
+
+
+       holder.mTextview.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Context context=view.getContext();
+               chat_method(data,context);
+           }
+
+
+       });
+
+        holder.mImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context=view.getContext();
+                chat_method(data,context);
+            }
+        });
+
     }
+
+
+
+    private void chat_method(String data,Context context) {
+        Intent intent = new Intent(context, chatActivity.class);
+        intent.putExtra("name",data);
+        context.startActivity(intent);
+    }
+
 
     @NonNull
     @Override
