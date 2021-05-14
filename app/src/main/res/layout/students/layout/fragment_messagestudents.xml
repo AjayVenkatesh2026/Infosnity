@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".students.messageFragmentStudent">
 
     <EditText
-        android:id="@+id/searchedit"
+        android:id="@+id/searchMsgStudent"
         android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="    Search mail.."
         android:background="@drawable/search_layout_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMessageStudent"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchMsgStudent"/>
 
     <TextView
         android:id="@+id/channeltxt"
@@ -22,6 +30,6 @@
         android:textStyle="bold"
         android:layout_marginLeft="10dp"
         android:textColor="@color/lightblack"
-        android:layout_below="@id/searchedit" />
+        android:layout_below="@id/recyclerViewMessageStudent"/>
 
 </RelativeLayout>
