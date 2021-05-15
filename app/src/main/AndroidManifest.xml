@@ -5,13 +5,17 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".EmojiLoader"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Infosnity">
-        <activity android:name=".chatActivity"></activity>
+
+        <activity android:name=".chatActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+
         <activity android:name=".faculty.createclassActivity" />
         <activity android:name=".faculty.MainActivityfaculty" />
         <activity android:name=".roleActivity" />
