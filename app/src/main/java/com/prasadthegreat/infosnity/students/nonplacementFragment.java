@@ -2,7 +2,6 @@ package com.prasadthegreat.infosnity.students;
 
 import android.os.Bundle;
 
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,10 +11,9 @@ import android.view.ViewGroup;
 import com.prasadthegreat.infosnity.R;
 
 
-public class placementFragmentStudent extends Fragment {
+public class nonplacementFragment extends Fragment {
 
 
-    SwitchCompat mSwitch;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -23,13 +21,12 @@ public class placementFragmentStudent extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public placementFragmentStudent() {
+    public nonplacementFragment() {
 
     }
 
-
-    public static placementFragmentStudent newInstance(String param1, String param2) {
-        placementFragmentStudent fragment = new placementFragmentStudent();
+    public static nonplacementFragment newInstance(String param1, String param2) {
+        nonplacementFragment fragment = new nonplacementFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -50,20 +47,7 @@ public class placementFragmentStudent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view=inflater.inflate(R.layout.fragment_placementstudents, container, false);
-
-        mSwitch=(SwitchCompat) view.findViewById(R.id.placementSwitch);
-        mSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(mSwitch.isChecked()){
-                    getFragmentManager().beginTransaction().replace(R.id.placementcontainer,new placementdataFragment()).commit();
-                }else{
-                    getFragmentManager().beginTransaction().replace(R.id.placementcontainer,new nonplacementFragment()).commit();
-                }
-            }
-        });
-
+        View view=inflater.inflate(R.layout.fragment_nonplacement, container, false);
         return view;
     }
 }

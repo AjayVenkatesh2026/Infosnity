@@ -3,13 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".students.placementFragmentStudent">
 
-    <TextView
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/placementSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:text="Placement Fragment"
-        android:layout_centerInParent="true"/>
+        android:thumb="@drawable/thumb"
+        app:track="@drawable/track"
+        app:showText="true"
+        android:textOn="Placement Mode"
+        android:textOff="Non-Placement Mode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <FrameLayout
+        android:id="@+id/placementcontainer"
+        android:layout_width="match_parent"
+        android:layout_below="@id/placementSwitch"
+        android:layout_height="match_parent">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Placement Mode"
+            android:gravity="center"
+            android:textSize="40dp"/>
+    </FrameLayout>
 
 </RelativeLayout>

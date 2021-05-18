@@ -3,6 +3,7 @@ package com.prasadthegreat.infosnity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vanniktech.emoji.EmojiPopup;
+
+import static com.prasadthegreat.infosnity.R.drawable.red_emoji;
 
 public class chatActivity extends AppCompatActivity {
 
@@ -32,12 +35,15 @@ public class chatActivity extends AppCompatActivity {
         mName.setText(name);
 
 
+
         EmojiPopup popup=EmojiPopup.Builder.fromRootView(findViewById(R.id.Root_Layout)).build(mMsgBox);
 
         mEmoji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
+                mEmoji.setColorFilter(Color.RED);
                 popup.toggle();
             }
         });
