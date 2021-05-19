@@ -32,13 +32,15 @@ public class roleActivity extends AppCompatActivity {
         mFacultytxt=(TextView)findViewById(R.id.facultycard);
         mStudenttxt=(TextView)findViewById(R.id.studentcard);
 
+        GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+        String id=googleSignInAccount.getId().toString();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         mFacultytxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-                String id=googleSignInAccount.getId().toString();
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
+
                 DatabaseReference myRef = database.getReference("users").child(id);
                 myRef.child("role").setValue("faculty").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -60,7 +62,7 @@ public class roleActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference().child("users");
+                DatabaseReference myRef = database.getReference().child("users").child(id);
                 myRef.child("role").setValue("student").addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

@@ -53,13 +53,15 @@ public class placementFragmentStudent extends Fragment {
         View view=inflater.inflate(R.layout.fragment_placementstudents, container, false);
 
         mSwitch=(SwitchCompat) view.findViewById(R.id.placementSwitch);
+        mSwitch.setChecked(false);
+        getFragmentManager().beginTransaction().replace(R.id.placementcontainer,new placementdataFragment()).commit();
         mSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(mSwitch.isChecked()){
-                    getFragmentManager().beginTransaction().replace(R.id.placementcontainer,new placementdataFragment()).commit();
-                }else{
                     getFragmentManager().beginTransaction().replace(R.id.placementcontainer,new nonplacementFragment()).commit();
+                }else{
+                    getFragmentManager().beginTransaction().replace(R.id.placementcontainer,new placementdataFragment()).commit();
                 }
             }
         });

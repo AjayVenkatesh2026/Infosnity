@@ -17,7 +17,7 @@ import static com.prasadthegreat.infosnity.R.drawable.red_emoji;
 
 public class chatActivity extends AppCompatActivity {
 
-    ImageView mEmoji;
+    ImageView mEmoji,mImage;
     TextView mName;
     EditText mMsgBox;
     LinearLayout linearLayout;
@@ -28,8 +28,9 @@ public class chatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
 
         String name=getIntent().getExtras().getString("name");
-        mName=(TextView)findViewById(R.id.name);
+        mName=(TextView)findViewById(R.id.username_Chat);
         mEmoji=(ImageView)findViewById(R.id.emojiImg);
+        mImage=(ImageView)findViewById(R.id.uploadImgChat);
         mMsgBox=(EditText)findViewById(R.id.msgBox);
         linearLayout=(LinearLayout)findViewById(R.id.LinearLayout);
         mName.setText(name);
@@ -45,6 +46,20 @@ public class chatActivity extends AppCompatActivity {
 
                 mEmoji.setColorFilter(Color.RED);
                 popup.toggle();
+            }
+        });
+
+        mImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(
+                        Intent.createChooser(
+                                intent,
+                                "Select Image from here..."),
+                        100);
             }
         });
 

@@ -118,6 +118,7 @@ public class profileFragmentStudents extends Fragment {
                             Intent intent=new Intent(getContext(), startingActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
+
                         }
 
                     }
