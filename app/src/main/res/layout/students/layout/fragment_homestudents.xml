@@ -27,9 +27,10 @@
         android:layout_below="@id/searchedit" />
 
     <RelativeLayout
-        android:layout_below="@id/channeltxt"
+        android:id="@+id/layoutRelative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/channeltxt"
         android:layout_marginLeft="20dp"
         android:orientation="horizontal">
 
@@ -38,10 +39,23 @@
             android:id="@+id/invitation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/plus_icon"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableEnd="@drawable/plus_icon"
             android:text="Join Class" />
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/showJoinedClasses"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutRelative"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp" />
 
 </RelativeLayout>

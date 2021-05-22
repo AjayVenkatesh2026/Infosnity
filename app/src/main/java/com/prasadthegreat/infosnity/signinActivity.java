@@ -10,6 +10,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -104,9 +105,10 @@ public class signinActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful())
                                 {
+                                    
                                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                                     DatabaseReference myRef = database.getReference().child("users");
-                                    HashMap<String,String> user_details=new HashMap<>();
+                                    HashMap<String,Object> user_details=new HashMap<>();
 
 
                                     String id=googleSignInAccount.getId().toString();
@@ -123,12 +125,13 @@ public class signinActivity extends AppCompatActivity {
                                     user_details.put("mid",id);
                                     user_details.put("role","null");
 
-                                    myRef.child(id).setValue(user_details).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    myRef.child(id).updateChildren(user_details).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
 
                                                 progressBar.cancel();
+                                                Log.d("Message", FirebaseDatabase.getInstance().getReference().child("users").child("id").child("name").get().toString());
                                                 Intent intent=new Intent(getApplicationContext(),roleActivity.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                 startActivity(intent);

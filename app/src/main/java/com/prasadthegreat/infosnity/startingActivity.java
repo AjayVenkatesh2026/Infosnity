@@ -17,6 +17,7 @@ public class startingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_starting);
 
         mGetstarted=(Button)findViewById(R.id.getStartedbtn);
+
         mGetstarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

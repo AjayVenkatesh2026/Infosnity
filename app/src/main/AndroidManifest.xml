@@ -12,16 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Infosnity">
-
-        <activity android:name=".chatActivity"
-            android:windowSoftInputMode="adjustResize"></activity>
-
+        <activity android:name=".students.JoinClassActivity"></activity>
+        <activity
+            android:name=".chatActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".faculty.createclassActivity" />
         <activity android:name=".faculty.MainActivityfaculty" />
         <activity android:name=".roleActivity" />
         <activity android:name=".signinActivity" />
         <activity android:name=".startingActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

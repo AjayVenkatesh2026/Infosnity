@@ -34,6 +34,13 @@
             android:layout_height="wrap_content"
             android:text="Invite People" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/viewClasses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/invitation"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp" />
 
 
 </RelativeLayout>

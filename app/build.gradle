@@ -72,4 +72,8 @@ dependencies {
     //Emoji
     implementation 'com.vanniktech:emoji-ios:0.6.0'
 
+    //Jetbrains annotations
+    implementation 'com.intellij:annotations:+@jar'
+
+
 }
